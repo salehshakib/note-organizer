@@ -9,10 +9,25 @@ const accessToken = process.env.ACCESS_TOKEN_SECRET;
 
 const userRouter = express.Router()
 
-userRouter.get('/', (req, res) => {
-    res.send({
-        message: "all the user are here"
-    })
+userRouter.get('/', async (req, res) => {
+    // res.send({
+    //     message: "all the user are here"
+
+    // })
+
+    try {
+        let data = await UserModel.find({})
+        res.send({
+            data: data,
+            message: "success",
+            status: 1
+        })
+    } catch (error) {
+        res.send({
+            message: error.message,
+            status: 0
+        })
+    }
 })
 
 
