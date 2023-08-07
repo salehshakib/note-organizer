@@ -1,70 +1,84 @@
-# note-organizer
+# Note Organizer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple note taking app website which i have done as an assessment from Headless Technologies Ltd.
 
-## Available Scripts
+Date: 8 Aug, 2023
 
-In the project directory, you can run:
+## Live Server
 
-### `npm start`
+https://learning-lab-b7fa5.web.app/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Description
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- This a home appliance repair platform where you can see what services we offer
+- An user can choose any service and review it
+- User has to log in or sign up first to review but he can see all the services and review on them
+- An user can add multiple reviews
+- An user can see his reviews on his dashboard
+- User can edit or delete his reviews from reviewSection page.
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Email, Password and google auth is used
+- JWT is used for security
+- Redux is used for state-management
+- Responsive for mobile and desktop version.
 
-### `npm run build`
+## How to Run Locally
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Clone the project
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+  git clone https://link-to-project
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Go to the project directory
 
-### `npm run eject`
+```bash
+  cd my-project
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Install dependencies
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+  npm install firebase react-router-dom
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+  npm install -D tailwindcss postcss autoprefixer
+  npx tailwindcss init -p
+  npm i daisyui
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
 
-## Learn More
+Add this to your tailwind.config.js files:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+  module.exports = {
+  //...
+  plugins: [require("daisyui")],
+  }
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Create a .env.local to save your firebase configuration file.
+- Start the server
 
-### Code Splitting
+```bash
+  npm run start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🛠 Skills
 
-### Analyzing the Bundle Size
+`HTML`, `CSS`, `Javascript`, `React`, `React Router`, `Express`, `Node`, `MongoDB`, `Mongoose`, `Redux`, `Firebase Auth`, `Tailwind`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Tech Stack
 
-### Making a Progressive Web App
+**Client:** React, TailwindCSS, DaisyUi.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+**Server:** Mongoose, Node.js, Postman, express, cors, jwt, bcrypt
 
-### Advanced Configuration
+## Acknowledgements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Font:** googleFonts
+- **Icon:** heroicons, reacticons
+- **Animation:** Lottiefiles
