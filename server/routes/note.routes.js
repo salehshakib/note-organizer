@@ -68,10 +68,10 @@ noteRouter.patch('/', async (req, res) => {
     }
 })
 
-// delete the note
+// delete note
 
 noteRouter.delete('/', async (req, res) => {
-    const id = req.headers
+    const { id } = req.headers
     try {
         await NoteModel.findByIdAndDelete({ _id: id })
         res.send({
@@ -85,11 +85,6 @@ noteRouter.delete('/', async (req, res) => {
         })
     }
 })
-
-
-
-
-
 
 
 
