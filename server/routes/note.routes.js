@@ -11,6 +11,8 @@ const noteRouter = express.Router();
 noteRouter.use(authenticator);
 
 
+// get all the note 
+
 noteRouter.get("/", async (req, res) => {
     try {
         let data = await NoteModel.find({ user: req.body.user })
@@ -26,15 +28,14 @@ noteRouter.get("/", async (req, res) => {
         })
     }
 
-
-    // F
 })
 
+// create a note
 
 noteRouter.post('/create', async (req, res) => {
 
     try {
-        let note = new NoteModel(req.body)
+        const note = new NoteModel(req.body)
         await note.save()
         res.send({
             message: "note created",
@@ -48,15 +49,42 @@ noteRouter.post('/create', async (req, res) => {
     }
 })
 
+// update note
+
+noteRouter.patch('/', async (req, res) => {
+    const { id } = req.headers
+    try {
+        await NoteModel.findByIdAndUpdate({ _id: id }, req.body)
+        res.send({
+            message: "note updated",
+            status: 1
+        })
+    } catch (error) {
+        res.send({
+            message: error.message,
+            // id: req.headers,
+            status: 0
+        })
+    }
+})
+
 // delete the note
 
-// noteRouter.delete('/delete', async (req, res) => {
-
-//     res.send({
-//         message:req.body.user
-//     })
-// })
-
+noteRouter.delete('/', async (req, res) => {
+    const id = req.headers
+    try {
+        await NoteModel.findByIdAndDelete({ _id: id })
+        res.send({
+            message: "note deleted",
+            status: 1
+        })
+    } catch (error) {
+        res.send({
+            message: error.message,
+            status: 0
+        })
+    }
+})
 
 
 
